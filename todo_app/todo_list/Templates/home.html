@@ -22,7 +22,14 @@
         {% for things in all_items %}
             {% if things.completed %}  
                 <tr class = "table-secondary">
-                    <td class ="striker">{{ things.item }}</td>
+                    <td class ="striker">
+                        <a href = "{% url 'edit' things.id %}">
+                            <button type="button" class="btn btn-outline-primary">
+
+                            {{ things.item }}
+                            </button>
+                        </a>
+                    </td>
                     <td><center>
                         <a href = "{% url 'uncross' things.id %}">
                             <button type="button" class="btn btn-outline-primary">
@@ -38,7 +45,14 @@
                 </tr>
             {% else %}
                 <tr>
-                    <td>{{ things.item }}</td>
+                    <td>
+                        <a href = "{% url 'edit' things.id %}">
+                            <button type="button" class="btn btn-outline-primary">
+
+                            {{ things.item }}
+                            </button>
+                        </a>
+                    </td>
                     <td>
                         <center>
                             <a href = "{% url 'cross_off' things.id %}">
